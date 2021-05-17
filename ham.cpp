@@ -76,6 +76,8 @@ static CopList sCopList __attribute__((section (".MEMF_CHIP")));
 ////////////////////////////////////////////////////////////////////////////////
 bool Ham_Init()
 {
+	warpmode(true);
+
 	for (int j = 0; j < kScreenHeight; j++)
 	{
 		for (int i = 0; i < (kScreenWidth / 16); i++)
@@ -92,8 +94,6 @@ bool Ham_Init()
 			#endif
 		}
 	}
-
-	warpmode(true);
 
 	sCopList.bpl0pth = CopMoveH(bplpt[0], sScreenBpl + kScreenPlaneSize / 2 * 0);
 	sCopList.bpl0ptl = CopMoveL(bplpt[0], sScreenBpl + kScreenPlaneSize / 2 * 0);
